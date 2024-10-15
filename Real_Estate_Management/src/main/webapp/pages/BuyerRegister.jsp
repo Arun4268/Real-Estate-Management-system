@@ -1,0 +1,99 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+
+<%
+String context = request.getContextPath(); 
+%>
+        .navbar {
+            background-color: #1E90FF;
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #FFFFFF;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #1E90FF;
+            border: none;
+            border-radius: 5px;
+            color: #FFFFFF;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Real Estate Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a href="<%=context%>/pages/index.jsp"  class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<body>
+<h2 align="center">Register</h2>
+
+<form action="RegisterBuyer.do">    
+
+
+<table>
+	<tr>
+		<td colspan="2"><c:if test="${requestScope.Err!=null}">
+			<font color="red">${requestScope.Err}</font>
+		</c:if></td>
+	</tr>
+	<tr>
+		<td>buyid</td>
+		<td><input type="text" name="buyid"></td>
+	</tr>
+	<tr>
+		<td>Name</td>
+		<td><input type="text" name="Name"></td>
+	</tr>
+	<tr>
+		<td>Email</td>
+		<td><input type="text" name="Email"></td>
+	</tr>
+	<tr>
+		<td>contactnumber</td>
+		<td><input type="text" name="contactnumber"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><input type="submit"
+			value="Register"></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
